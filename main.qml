@@ -1,7 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtQuick.VirtualKeyboard 2.1
-//this is test
+
 ApplicationWindow {
     id: window
     visible: true
