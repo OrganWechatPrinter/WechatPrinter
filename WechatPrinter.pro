@@ -15,7 +15,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp \
     HttpDownloadImg.cpp \
     MyPrinter.cpp \
-    SettingFiles.cpp
+    SettingFiles.cpp \
+    QML_HttpDownloadImg.cpp \
+    QML_MyPrinter.cpp \
+    QML_SettingFiles.cpp
 
 RESOURCES += qml.qrc
 
@@ -33,4 +36,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     HttpDownloadImg.h \
     MyPrinter.h \
-    SettingFiles.h
+    SettingFiles.h \
+    QML_HttpDownloadImg.h \
+    QML_MyPrinter.h \
+    QML_SettingFiles.h
