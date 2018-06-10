@@ -6,8 +6,9 @@ ApplicationWindow {
     id: window
     visible: true
     width: 480
-    height: 600
+    height: 700
     title: qsTr("WeChat Printer")
+
 
     SwipeView {
         id: swipeView
@@ -28,6 +29,7 @@ ApplicationWindow {
 
     footer: TabBar {
         id: tabBar
+        height: 40
         currentIndex: swipeView.currentIndex
 
         TabButton {

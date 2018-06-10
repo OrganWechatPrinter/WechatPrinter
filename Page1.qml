@@ -5,30 +5,38 @@ import QtQuick.Controls 1.4
 Page1Form {
     Item {
         anchors.fill: parent
-        Item{//主界面标题实现
+
+        Item {//图片显示区域
+            id: imgArea
+            x:0
+            y:uititle.height
+            width: screenimg.width
+            height: 2000//设置纵向最大支持图片的像素
+            Image {
+                id: screenimg
+                source: "./1.png"
+                MouseArea {
+                    anchors.fill: parent
+                    drag.target: screenimg//设置拖拽对象
+                    drag.axis: Drag.YAxis//设置拖拽方式
+                    drag.minimumY: -screenimg.height+50//设置纵向向上拖拽的位移
+                    drag.maximumY: 0
+                }
+            }
+        }
+        Rectangle{//主界面标题实现,放置此处用于图片的背景遮挡
             id: uititle
             width:parent.width
             height: 30
+            color: "white"//设置背景为不透明作为挡板
             Text {
                 anchors.fill: parent
                 font.pointSize: 24
                 text: qsTr("<b>订单记录</b>")
             }
         }
-        Item {//图片显示区域
-            x:0
-            y:uititle.height
-            width: parent.width - parent.width*0.6
-            height: parent.height
-            id: imgArea
-            Image {
-                id: screenimg
-                anchors.fill: parent
-                source: "./1.png"
-            }
 
-        }
-        Item {//历史订单记录区域
+        Item {//当前订单记录区域
             x:imgArea.width
             y:uititle.height
             width: parent.width - imgArea.width
@@ -51,18 +59,6 @@ Page1Form {
 
                 ListModel {
                     id: libraryModel
-                    ListElement {
-                        time: "A Masterpiece"
-                        descreption: "Gabriel"
-                    }
-                    ListElement {
-                        time: "Brilliance"
-                        descreption: "Jens"
-                    }
-                    ListElement {
-                        time: "Outstanding"
-                        descreption: "Frederik"
-                    }
                 }
                 TableView {
                     id:recordtable
