@@ -16,9 +16,9 @@ SOURCES += main.cpp \
     HttpDownloadImg.cpp \
     MyPrinter.cpp \
     SettingFiles.cpp \
-    QML_HttpDownloadImg.cpp \
-    QML_MyPrinter.cpp \
-    QML_SettingFiles.cpp
+#    QML_HttpDownloadImg.cpp \
+#    QML_MyPrinter.cpp \
+#    QML_SettingFiles.cpp
 
 RESOURCES += qml.qrc
 
@@ -37,6 +37,6 @@ HEADERS += \
     HttpDownloadImg.h \
     MyPrinter.h \
     SettingFiles.h \
-    QML_HttpDownloadImg.h \
-    QML_MyPrinter.h \
-    QML_SettingFiles.h
+#    QML_HttpDownloadImg.h \
+#    QML_MyPrinter.h \
+#    QML_SettingFiles.h
